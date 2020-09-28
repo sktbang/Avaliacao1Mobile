@@ -14,7 +14,19 @@ vão complementar a classe truco.
 Para sua referência, segue o método `jogar()`, 
 que implementa a lógica básica do início do jogo:
 */
+
 public class Truco {
+    Jogador player1;
+    Jogador player2;
+    Baralho deck;
+    Carta cartaFlipada;
+
+    public Truco() {
+        player1 = new Jogador();
+        player2 = new Jogador();
+        deck = new Baralho();
+        cartaFlipada = new Carta(null, null);
+    }
 
     private void imprimeMesa() {
         System.out.println("Apenas um placeholder para a impressão de mesa.");
@@ -26,5 +38,20 @@ public class Truco {
         distribuiMaos();
         inicializaManilha();
         imprimeMesa();
-    }    
+    }
+
+    private void embaralhaCartas(){
+        deck.embaralhar();
+    }
+
+    private void distribuiMaos(){
+        player1.recebeCarta(deck.distribuir());
+        player2.recebeCarta(deck.distribuir());
+    }
+
+    private void inicializaManilha(){
+        cartaFlipada = deck.distribuir();
+    }
+
+
 }

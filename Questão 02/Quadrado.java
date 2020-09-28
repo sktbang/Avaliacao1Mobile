@@ -4,6 +4,20 @@ Implemente uma classe `Quadrado`, que possui um atributo
 o atributo `lado`. Faça com que essa classe __implemente__ a 
 interface `Geometria`.
 */
-public class Quadrado {
+public abstract class Quadrado implements Geometria{
+    double lado;
 
+    public Quadrado(double lado){
+        this.lado = lado;
+    }
+
+    @Override
+    public double getPerimetro() {
+        return 0;
+    }
+
+    @Override
+    public double getArea() {
+        return 0;
+    }
 }

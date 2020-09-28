@@ -10,5 +10,17 @@ uma carta no vetor `mao`, na posição `indiceMao`. Você deve incrementar
 `indiceMao` após receber a carta. 
 */
 public class Jogador {
-    
+    int indiceMao;
+    Carta[] mao;
+
+
+    public Jogador() {
+        indiceMao = 0;
+        mao = new Carta[3];
+    }
+
+    public void recebeCarta(Carta c){
+        mao [indiceMao] = c;
+        indiceMao += 1;
+    }
 }
